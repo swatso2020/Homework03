@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<title>Hello, world!</title>
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+<!-- Optional JavaScript -->
+<script>
+
+/*
+//code to print only one random value at a time from  the array
+  var number =[0,1,2,3,4,5,6,7,8,9];//Variable declaration
+  var index = Math.floor(Math.random()*number.length)//gets whole number not longer than the array
+  console.log(number[index]);//prints value from number array using whole number as reference
+  */
+
+/*
+ //this is to loop through the array and print random values
+ var number =["A",1,2,"Y",4,5,"C",7,8,9]
+  for(var i=0; i<number.length;i++){
+    var index = Math.floor(Math.random()*number.length)// has to go in the loop becaue the index value needs to change in order to print differt values
+    console.log(number[index])
+  }
+  */
+  //function to get random number
+  var number =[0,1,2,3,4,5,6,7,8,9];
+  var char =["!","@","#","$","%","^","&","*"];
+  var upperCase =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","V","W","X","Y","Z"];
+  var lowerCase =["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+  var arraylist =[number,char,upperCase,lowerCase]
+  //simulating user input
+  var userNum = 1;
+  var userSpec = 1;
+  var userUpper = 1;
+  var userLower = 1;
+
+ 
+
+  
+  
+function passwordGenerator(){
+  var password =[]//stores results from for loop
+   var randomNumber ='';//variable to store the random number operaton
+  //for loop will 
+  
+        for(var i=0; i<8;i++){
+           if(userNum==1){ 
+                randomNumber =Math.floor(Math.random()*arraylist[0].length)
+                 password.push(arraylist[0][randomNumber]);
+                 console.log("inside for loop" + arraylist[0][randomNumber])
+                }
+                if(userSpec==1){
+            
+                randomNumber =Math.floor(Math.random()*arraylist[1].length)
+                 password.push(arraylist[1][randomNumber]);
+                 console.log("inside for loop" + arraylist[1][randomNumber])
+                 }
+
+              if(userUpper==1){
+            randomNumber =Math.floor(Math.random()*arraylist[2].length)
+             password.push(arraylist[2][randomNumber]);
+             console.log("inside for loop" + arraylist[2][randomNumber])
+             }
+             if(userLower==1){
+            randomNumber =Math.floor(Math.random()*arraylist[3].length)
+             password.push(arraylist[3][randomNumber]);
+             console.log("inside for loop" + arraylist[3][randomNumber])
+             }
+        
+        } 
+return password.join('');
+ }
+console.log(passwordGenerator());
+/*
+
+ function getRandomNumber(){
+  var password =[]//stores results from for loop
+   var randomNumber ='';//variable to store the random number operaton
+  //for loop will 
+  for(var i=0; i<number.length;i++){
+    randomNumber =Math.floor(Math.random()*number.length)
+    password.push(number[randomNumber]);
+ }
+ return password.join('');
+ }
+
+ function getSpecialCharacter(){
+  var password =[]//stores results from for loop
+  var randomNumber ='';//variable to store the random number operaton
+ //for loop will 
+ for(var i=0; i<char.length;i++){
+   randomNumber =Math.floor(Math.random()*char.length)
+   password.push(char[randomNumber]);
+}
+return password.join('');
+}
+ console.log(getRandomNumber()+getSpecialCharacter())
+ //getSpecialCharacter()
+
+/*
+  //this loop cycles through 10 times and produces a random number
+  for(var i=0;i<10;i++){
+  var random = Math.floor((Math.random() * 10));
+  password = random;
+  console.log("this is the random from the function:")
+  }
+  */
+  
+ 
+</script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
