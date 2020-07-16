@@ -6,12 +6,16 @@ var upperCase =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P",
 var lowerCase =["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var arraylist =[number,char,upperCase,lowerCase]
 //simulating user input
-var userNum = 1;
-var userSpec = 1;
-var userUpper = 1;
-var userLower = 1;
+var userNum = confirm("would you like your password to contain numbers?");
+var userSpec = confirm("would you like your password to contain special characters?");
+var userUpper = confirm("whould you like your password to contain uppercase characters?");
+var userLower = confirm("would you like your password to contain lowercase letters")
+var userSelLength = prompt("choose the length of your characters. Must be 8 - 128 characters long");
 
+if(userSelLength <8 || userSelLength>128){
+      alert("password out of bounds. Please refresh ran and try agian")
 
+}
 
 var generateBtn = document.querySelector("#generate");
 
@@ -23,35 +27,30 @@ var password =[]//stores results from for loop
 //for loop will 
 
       for(var i=0; i<8;i++){
-         if(userNum==1){ 
+         if(userNum){ 
               randomNumber =Math.floor(Math.random()*arraylist[0].length)
                password.push(arraylist[0][randomNumber]);
-               console.log("inside for loop" + arraylist[0][randomNumber])
               }
-              if(userSpec==1){
+              if(userSpec){
           
               randomNumber =Math.floor(Math.random()*arraylist[1].length)
                password.push(arraylist[1][randomNumber]);
-               console.log("inside for loop" + arraylist[1][randomNumber])
                }
 
-            if(userUpper==1){
+            if(userUpper){
           randomNumber =Math.floor(Math.random()*arraylist[2].length)
            password.push(arraylist[2][randomNumber]);
-           console.log("inside for loop" + arraylist[2][randomNumber])
            }
-           if(userLower==1){
+           if(userLower){
           randomNumber =Math.floor(Math.random()*arraylist[3].length)
            password.push(arraylist[3][randomNumber]);
-           console.log("inside for loop" + arraylist[3][randomNumber])
            }
+
+           pwd = password.slice(0,userSelLength)
       
       } 
-      document.getElementById('password').value =password.join('')     
+      document.getElementById('password').value =pwd.join('')     
 
 
 
 }
-
-
-//generateBtn.addEventListener("click", writePassword);
